@@ -1,0 +1,37 @@
+states:
+q0 q1 q2 q_accept q_reject
+
+input_alphabet:
+zero one
+
+tape_alphabet:
+zero one markedZero markedOne _
+
+blank:
+_
+
+start:
+q0
+
+accept:
+q_accept
+
+reject:
+q_reject
+
+transitions:
+q0 zero q1 markedZero R
+q0 markedZero q0 markedZero R
+q0 markedOne q0 markedOne R
+q0 _ q_accept _ S
+
+q1 zero q1 zero R
+q1 markedZero q1 markedZero R
+q1 markedOne q1 markedOne R
+q1 one q2 markedOne L
+q1 _ q_reject _ S
+
+q2 zero q2 zero L
+q2 one q2 one L
+q2 markedZero q0 markedZero R
+q2 markedOne q2 markedOne L

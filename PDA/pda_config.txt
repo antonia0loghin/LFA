@@ -1,0 +1,31 @@
+states:
+q0 q1 q2
+
+alphabet:
+zero one
+
+stack_alphabet:
+Z X
+
+start:
+q0
+
+start_stack:
+Z
+
+accept:
+q2
+
+transitions:
+# Push X for every zero
+q0 zero Z q0 X Z
+q0 zero X q0 X X
+
+# Switch state when first one is read
+q0 one X q1 e
+
+# Pop one X for every one
+q1 one X q1 e
+
+# Accept if stack back to Z and input is done
+q1 e Z q2 Z

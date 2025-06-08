@@ -1,0 +1,24 @@
+# States of the NFA
+states:
+q0 q1 q2 q_accept
+
+# Alphabet symbols (can be words, not just single letters)
+alphabet:
+zero one markedZero markedOne
+
+# Start state
+start:
+q0
+
+# Accept states
+accept:
+q_accept
+
+# Transitions in format: from_state symbol to_state
+transitions:
+q0 zero q1
+q0 markedZero q1
+q1 one q2
+q1 markedOne q2
+q2 zero q_accept
+q2 markedZero q_accept

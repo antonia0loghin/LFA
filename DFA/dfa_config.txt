@@ -1,0 +1,21 @@
+states:
+Hallway Kitchen Library Exit Entrance SecretRoom
+
+alphabet:
+left right up down
+
+transitions:
+Hallway up SecretRoom
+Hallway right Library
+Hallway left Kitchen
+Hallway down Entrance
+Entrance up Hallway
+SecretRoom down Hallway
+Library left Hallway
+Library down Exit
+
+start:
+Entrance
+
+accept:
+Exit SecretRoom
